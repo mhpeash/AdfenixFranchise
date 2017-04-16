@@ -1,0 +1,32 @@
+{
+  "Html": "/AdfenixFranchise/UpdateFranchiseOfficePage.html",
+  "UpdateOfficeTrigger$": 0,
+  "AddHomeTrigger$": 0,
+  "AddTransactionTrigger$": 0,
+  "Office": {
+    "Name$": "",
+    "Street$": "",
+    "Contact$": "",
+    "ZipCode$": 0,
+    "City$": "",
+    "Country$": "",
+    "Address": ""
+  },
+  "HomeForSale": {
+    "Street$": "",
+    "Number$": "",
+    "ZipCode$": 0,
+    "City$": "",
+    "Country$": "",
+    "SaleDate$": "",
+    "Price$": 0.0,
+    "Commission$": 0.0
+  },
+  "Transactions": [
+    {
+      "SaleDate$": "",
+      "Price$": 0.0,
+      "Commission$": 0.0
+    }
+  ]
+}

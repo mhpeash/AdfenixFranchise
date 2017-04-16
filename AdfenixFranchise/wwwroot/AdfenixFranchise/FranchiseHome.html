@@ -1,0 +1,42 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+        <a href="/AdfenixFranchise">Back to start</a>
+        <H1>Francise offices of {{model.CompanyName}}</H1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Number of homes sold</th>
+                    <th>Total commission</th>
+                    <th>Average commision</th>
+                    <th>Trend</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template is="dom-repeat" items="{{model.FranchiseOffices}}">
+                    <tr>
+                        <td>
+                            <a href="{{item.Link}}">{{item.Name}}</a>
+                        </td>
+                        <td>{{item.HomesSold}}</td>
+                        <td>{{item.TotalCommision}}</td>
+                        <td>{{item.AverageCommision}}</td>
+                        <td>{{item.Trend}}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <br />
+        <h5>New franchise office</h5>
+        <br />
+        <fieldset>
+            <label>Name:</label>
+            <input type="text" value="{{model.FranchiseName$::input}}" />
+        </fieldset>
+        <br />
+        <button value="{{model.CreateFranchiseOfficeTrigger$::click}}" onmousedown="++this.value">Create new</button>
+        <br />
+    </template>
+</template>

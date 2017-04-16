@@ -1,0 +1,98 @@
+﻿<link rel="import" href="/sys/polymer/polymer.html">
+
+<template>
+    <template is="dom-bind">
+
+        <a href="/AdfenixFranchise">Back To Start</a>
+        <br />
+        <br />
+        <h2>Edit franchise settings</h2>
+        <br />
+        <fieldset>
+            <label>Name:</label>
+            <input type="text" value="{{model.Office.Name$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Street:</label>
+            <input type="text" value="{{model.Office.Street$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Number:</label>
+            <input type="text" value="{{model.Office.Number$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Zip Code:</label>
+            <input type="text" value="{{model.Office.ZipCode$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>City:</label>
+            <input type="text" value="{{model.Office.City$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Country:</label>
+            <input type="text" value="{{model.Office.Country$::input}}" />
+        </fieldset>
+        <button value="{{model.UpdateOfficeTrigger$::click}}" onmousedown="++this.value">Save</button>
+        <br />
+        <h2>Register new home for sell</h2>
+        <br />
+        <h3>Home info</h3>
+        <fieldset>
+            <label>Street:</label>
+            <input type="text" value="{{model.HomeForSale.Street$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Number:</label>
+            <input type="text" value="{{model.HomeForSale.Number$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Zip Code:</label>
+            <input type="text" value="{{model.HomeForSale.ZipCode$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>City:</label>
+            <input type="text" value="{{model.HomeForSale.City$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Country:</label>
+            <input type="text" value="{{model.HomeForSale.Country$::input}}" />
+        </fieldset>
+        <button value="{{model.AddHomeTrigger$::click}}" onmousedown="++this.value">Save</button>        
+        <br />
+        <h3>Transaction info</h3>
+        <fieldset>
+            <label>Date(format 2016-04-01):</label>
+            <input type="text" value="{{model.HomeForSale.SaleDate$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Price:</label>
+            <input type="text" value="{{model.HomeForSale.Price$::input}}" />
+        </fieldset>
+        <fieldset>
+            <label>Commission:</label>
+            <input type="text" value="{{model.HomeForSale.Commission$::input}}" />
+        </fieldset>       
+        <button value="{{model.AddHomeTrigger$::click}}" onmousedown="++this.value">Save</button>
+        <br />
+        <h1>Transactions</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Sales Price</th>
+                    <th>Commission</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template is="dom-repeat" items="{{model.Transactions}}">
+                    <tr>
+                        <td>{{item.SaleDate}}</td>
+                        <td>{{item.Price}}</td>
+                        <td>{{item.Commission}}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+
+    </template>
+</template>

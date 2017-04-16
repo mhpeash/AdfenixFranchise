@@ -1,0 +1,17 @@
+{
+  "Html": "/AdfenixFranchise/FranchiseHome.html",
+  "CompanyName": "",
+  "FranchiseName$": "",
+  "CreateFranchiseOfficeTrigger$": 0,
+  "FranchiseOffices": [
+    {
+      "AverageCommision": 0.0,
+      "HomesSold": 0,
+      "Key": "",
+      "Link": "",
+      "Name": "",
+      "TotalCommision": 0.0,
+      "Trend": 0.0
+    }
+  ]
+}
