@@ -1,5 +1,6 @@
 {
   "Html": "/AdfenixFranchise/UpdateFranchiseOfficePage.html",
+  "BackUrl": "",
   "UpdateOfficeTrigger$": 0,
   "AddHomeTrigger$": 0,
   "AddTransactionTrigger$": 0,
@@ -24,9 +25,9 @@
   },
   "Transactions": [
     {
-      "SaleDate$": "",
-      "Price$": 0.0,
-      "Commission$": 0.0
+      "SaleDate": "",
+      "Price": 0.0,
+      "Commission": 0.0
     }
   ]
 }

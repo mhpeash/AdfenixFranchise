@@ -12,6 +12,7 @@ namespace AdfenixFranchise.ViewModels
 
             var data = this.Data;
             this.CompanyName = data.Name;
+
         }
 
         private void Handle(Input.CreateFranchiseOfficeTrigger action)
@@ -21,8 +22,8 @@ namespace AdfenixFranchise.ViewModels
                 var newOfficeData = new FranchiseOffice
                 {
                     Corporation = this.Data,
-                    Name = this.Name,
-                    City = this.City,
+                    Name = this.FranchiseName,
+                    City = "",
                     Contact = "",
                     Country = "",
                     Street = "",

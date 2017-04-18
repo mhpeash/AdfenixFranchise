@@ -3,7 +3,7 @@
 <template>
     <template is="dom-bind">
 
-        <a href="/AdfenixFranchise">Back To Start</a>
+        <a href="{{model.BackUrl}}">Back</a>
         <br />
         <br />
         <h2>Edit franchise settings</h2>
@@ -15,10 +15,6 @@
         <fieldset>
             <label>Street:</label>
             <input type="text" value="{{model.Office.Street$::input}}" />
-        </fieldset>
-        <fieldset>
-            <label>Number:</label>
-            <input type="text" value="{{model.Office.Number$::input}}" />
         </fieldset>
         <fieldset>
             <label>Zip Code:</label>
@@ -56,8 +52,7 @@
         <fieldset>
             <label>Country:</label>
             <input type="text" value="{{model.HomeForSale.Country$::input}}" />
-        </fieldset>
-        <button value="{{model.AddHomeTrigger$::click}}" onmousedown="++this.value">Save</button>        
+        </fieldset>       
         <br />
         <h3>Transaction info</h3>
         <fieldset>

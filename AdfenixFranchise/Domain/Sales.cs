@@ -17,7 +17,7 @@ namespace AdfenixFranchise.Domain
         public string City { get; set; }
         public string Country { get; set; }
 
-        public DateTime TransactionDate { get; set; }
+        public DateTime SaleDate { get; set; }
         public decimal Price { get; set; }
         public decimal Commission { get; set; }
     }

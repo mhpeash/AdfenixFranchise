@@ -4,31 +4,14 @@ using System;
 
 namespace AdfenixFranchise.ViewModels
 {
-    partial class UpdateFranchiseOfficePageJson : Json
+    partial class UpdateFranchiseOfficePageJson : Json, IBound<FranchiseOffice>
     {
         protected override void OnData()
         {
             base.OnData();
             var office = this.Data as FranchiseOffice;
+            this.BackUrl = "/AdfenixFranchise/franchisehome/" + office.Corporation.GetObjectID();
 
-            this.LoadOfficeDataIntoView(office);
-
-            this.LoadTransactionsIntoView(office);
-        }
-
-        private void LoadTransactionsIntoView(FranchiseOffice office)
-        {
-            foreach (var tansaction in office.Transactions)
-            {
-                var transaction = this.Transactions.Add();
-                transaction.Commission = tansaction.Commission;
-                transaction.Price = tansaction.Price;
-                transaction.SaleDate = tansaction.TransactionDate.ToString();
-            }
-        }
-
-        private void LoadOfficeDataIntoView(FranchiseOffice office)
-        {
             this.Office = new OfficeJson();
             this.Office.City = office.City;
             this.Office.Name = office.Name;
@@ -55,26 +38,22 @@ namespace AdfenixFranchise.ViewModels
 
         private void Handle(Input.AddHomeTrigger action)
         {
-            Db.Scope(() =>
+            Db.Transact(()=> 
             {
-                var homeSale = new Sales();
-                var franchiseOffice = this.Data as FranchiseOffice;
-                homeSale.FranchiseOffice = franchiseOffice;
-                homeSale.ZipCode = (int)this.HomeForSale.ZipCode;
-                homeSale.Street = this.HomeForSale.Street;
-                homeSale.Number = this.HomeForSale.Number;
-                homeSale.City = this.HomeForSale.City;
-                homeSale.Commission = this.HomeForSale.Commission;
-                homeSale.Country = this.HomeForSale.Country;
-                homeSale.TransactionDate = DateTime.Parse(this.HomeForSale.SaleDate);
-                homeSale.Price = this.HomeForSale.Price;
+                var newHome = new Sales
+                {
+                    FranchiseOffice = this.Data,
+                    ZipCode = (int)this.HomeForSale.ZipCode,
+                    Street = this.HomeForSale.Street,
+                    Number = this.HomeForSale.Number,
+                    City = this.HomeForSale.City,
+                    Commission = this.HomeForSale.Commission,
+                    Country = this.HomeForSale.Country,
+                    SaleDate = DateTime.Parse(this.HomeForSale.SaleDate),
+                    Price = this.HomeForSale.Price
 
-                var t = this.Transactions.Add();
-                t.Price = this.HomeForSale.Price;
-                t.SaleDate = this.HomeForSale.SaleDate;
-                t.Commission = this.HomeForSale.Commission;
-            });
-            this.Transaction.Commit();
+                };
+            });            
         }
        
     }

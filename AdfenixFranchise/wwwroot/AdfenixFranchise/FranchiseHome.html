@@ -2,7 +2,7 @@
 
 <template>
     <template is="dom-bind">
-        <a href="/AdfenixFranchise">Back to start</a>
+        <a href="/AdfenixFranchise">Back to Home</a>
         <H1>Francise offices of {{model.CompanyName}}</H1>
         <table class="table">
             <thead>
@@ -20,9 +20,9 @@
                         <td>
                             <a href="/AdfenixFranchise/franchiseoffice/{{item.Key}}">{{item.Name}}</a>
                         </td>
-                        <td>{{item.HomesSold}}</td>
-                        <td>{{item.TotalCommision}}</td>
-                        <td>{{item.AverageCommision}}</td>
+                        <td>{{item.NumberOfHomeSold}}</td>
+                        <td>{{item.TotalCommission}}</td>
+                        <td>{{item.AverageCommission}}</td>
                         <td>{{item.Trend}}</td>
                     </tr>
                 </template>
