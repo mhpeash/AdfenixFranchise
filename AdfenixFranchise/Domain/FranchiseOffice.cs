@@ -16,6 +16,10 @@ namespace AdfenixFranchise.Domain
         public string City { get; set; }
         public string Country { get; set; }
 
+        public string Key { get {
+                return this.GetObjectID();
+            } }
+
         public IEnumerable<Sales> Transactions
         {
             get
